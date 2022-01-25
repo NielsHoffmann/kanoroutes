@@ -11,7 +11,7 @@
 
   <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+  <script src="routes.js"></script>
 
   <!-- Position the map and title with Cascading Style Sheet (CSS) -->
   <style>
@@ -21,8 +21,7 @@
   </style>
 </head>
 <body>
-
-  <!-- Display the map and title with HTML division tags  -->
+      <!-- Display the map and title with HTML division tags  -->
   <div id="map-title">kanoroutes</div>
   <div id="map"></div>
 
@@ -45,16 +44,36 @@
         <a href="https://carto.com/attribution">CARTO</a>'
   }).addTo(map);
 
+  //lagen control initialiseren
+  var control = L.control.layers(null, null).addTo(map);
 
-//   //gpx track op de kaart zetten met omnivore plugin
-//   var track = omnivore.gpx('/tracks/Rondje_Westzaan.gpx')
-//     .on('ready', function() {
-//         map.fitBounds(track.getBounds());
-//     })
-//     .addTo(map);
+  //attributen uit gpx schema (name, desc) en het label voor de popup
+  gpxheaders = [['name','naam'],['desc','lengte']]
 
-    // poi labels
+  //popup configureren en laag toevoegen aan layer control
+  customLayer = L.geoJson(null, {
+    onEachFeature: function (feature, layer) {
+        //console.log(layer)
+        control.addOverlay(layer, feature.properties['name'])
+        var popupContent = gpxheaders.map(function (gpxheader) {
+            return gpxheader[1] + ' : ' + feature.properties[gpxheader[0]];}).join('<br>');
+
+    layer.bindPopup(popupContent);
+},
+});
+
+//welke gpx tracks er geladen moeten worden is gedefinieerd in routes.js
+var listOfFilesPath = routeData["routes"];
+//voor elke route voeg toe aan de kaart
+for (var i = 0; i < listOfFilesPath.length; i += 1) {
+    omnivore.gpx(listOfFilesPath[i], null,  customLayer)
+    .addTo(map);
+}
+
+//
+// poi labels
 headers = ['soort','naam']
+
 
 var customMarkerOptions =  {
   radius: 6,
@@ -65,9 +84,11 @@ var customMarkerOptions =  {
   fillOpacity: 1,
 }
 
+//configureer de popups voor punten
 customLayerLocalData = L.geoJson(null, {
     onEachFeature: function (feature, layer) {
         //console.log(feature)
+        //control.addOverlay(layer, feature.properties['naam'])
         var popupContent = headers.map(function (header) {
             return header + ':' + feature.properties[header];}).join('<br>');
 
@@ -76,41 +97,22 @@ customLayerLocalData = L.geoJson(null, {
     pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, customMarkerOptions);
     }
-});
-omnivore.csv('/poi/poi.csv', null, customLayerLocalData).addTo(map);
+},
+);
 
-//leaflet-gpx
-var control = L.control.layers(null, null).addTo(map);
+//voeg alle punten uit de csv toe
+var pois = L.layerGroup();
 
-var gpx = '/tracks/Westzaan.gpx'; // URL to your GPX file or the GPX itself
-track = new L.GPX(gpx, 
-     {async: true,
-        marker_options: {
-    startIconUrl: 'icons/pin-icon-start.png',
-    endIconUrl: 'icons/pin-icon-end.png',
-    shadowUrl: 'icons/pin-shadow.png'
-  }
-}
-  ).on('loaded', function(e) {
-  //map.fitBounds(e.target.getBounds());
-  track.bindPopup('route: ' + e.target.get_name() + '<br>' + 'lengte: ' + (e.target.get_distance()/1000).toFixed(1) + ' km')
-  control.addOverlay(track, e.target.get_name());
-
-}).addTo(map);
-
-var gpx2 = '/tracks/Kagerplassen.gpx'; // URL to your GPX file or the GPX itself
-track2 = new L.GPX(gpx2, {async: true,marker_options: {
-    startIconUrl: 'icons/pin-icon-start.png',
-    endIconUrl: 'icons/pin-icon-end.png',
-    shadowUrl: 'icons/pin-shadow.png'
-  }}).on('loaded', function(e) {
-  //map.fitBounds(e.target.getBounds());
-  track2.bindPopup('route: ' + e.target.get_name() + '<br>' + 'lengte: ' + (e.target.get_distance()/1000).toFixed(1) + ' km')
-  control.addOverlay(track2, e.target.get_name());
-
-}).addTo(map);
+omnivore.csv('/poi/poi.csv', null, customLayerLocalData)
+    .on('ready', function() {
+    for (var key in customLayerLocalData._layers) {
+        customLayerLocalData._layers[key].addTo(pois);
+    }
+    control.addOverlay(pois, "Punten");
+    //L.control.layers(null, overlayMaps).addTo(map);
+  }).addTo(map);
 
 
-  </script>
+</script>
 </body>
 </html>
