@@ -103,7 +103,7 @@ customLayerLocalData = L.geoJson(null, {
 //voeg alle punten uit de csv toe
 var pois = L.layerGroup();
 
-omnivore.csv('/poi/poi.csv', null, customLayerLocalData)
+omnivore.csv('/kanoroutes/poi/poi.csv', null, customLayerLocalData)
     .on('ready', function() {
     for (var key in customLayerLocalData._layers) {
         customLayerLocalData._layers[key].addTo(pois);

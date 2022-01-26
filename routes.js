@@ -1,7 +1,7 @@
 var routeData = { "routes":
-["/tracks/kagerplassen.gpx",
-  "/tracks/westzaan.gpx",
-  "/tracks/ijburg.gpx",
-  "/tracks/vinkeveense_plassen.gpx",
-  "/tracks/eilandspolder.gpx"
+["/kanoroutes/tracks/kagerplassen.gpx",
+  "/kanoroutes/tracks/westzaan.gpx",
+  "/kanoroutes/tracks/ijburg.gpx",
+  "/kanoroutes/tracks/vinkeveense_plassen.gpx",
+  "/kanoroutes/tracks/eilandspolder.gpx"
 ]}
