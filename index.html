@@ -53,13 +53,30 @@
   //popup configureren en laag toevoegen aan layer control
   customLayer = L.geoJson(null, {
     onEachFeature: function (feature, layer) {
-        //console.log(layer)
+        //console.log(feature)
         control.addOverlay(layer, feature.properties['name'])
         var popupContent = gpxheaders.map(function (gpxheader) {
             return gpxheader[1] + ' : ' + feature.properties[gpxheader[0]];}).join('<br>');
-
+            
+            if (feature.properties['link']){
+              popupContent = popupContent+" </br> <a href=\""+ feature.properties['link']+"\">Meer info...</a>";
+            }  
     layer.bindPopup(popupContent);
-},
+    //higlight track bij mouseover
+    layer.on({
+      mouseover: function (e) {
+        var layer = e.target;
+        layer.setStyle({
+          weight: 8,
+          color: "#00008b",
+          opacity: 0.5
+        });
+      },
+      mouseout: function (e) {
+        customLayer.resetStyle(e.target);
+      }
+  })
+}
 });
 
 //welke gpx tracks er geladen moeten worden is gedefinieerd in routes.js
