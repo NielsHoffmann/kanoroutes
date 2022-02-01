@@ -1,3 +1,37 @@
 id,soort,naam,opmerking,latitude,longitude
 1,vereniging,Kanovereniging Waterwolf,,52.32990566979075,4.651397371783277
-2,kanosteiger,kanosteiger Westzaan, ,52.468472,4.789404
+2,startpunt,startpunt Westzaan, ,52.468472,4.789404
+3,overdraagplaats,Akersluis west,,52.34350884067578, 4.793123098819551
+4,overdraagplaats,Akersluis oost,,52.34442657985269, 4.793752530595194
+5,overdraagplaats,Westlandgrachtsluis west,,52.35197152811738, 4.840320456507741
+6,overdraagplaats,Westlandgrachtsluis oost,,52.35210911856513, 4.842159786320524
+7,overdraagplaats,Cramersluis noord,,52.37608252741925, 4.8343248758070585
+8,overdraagplaats,Cramersluis zuid,,52.375185588142685, 4.834322531900696
+9,overdraagplaats,Nieuwemeersluis noord,,52.34057615919439, 4.847383098431534
+10,overdraagplaats,Nieuwemeersluis zuid,,52.33929901088536, 4.8475154623632974
+11,overdraagplaats,Bosbaansluis noord,,52.330233102285604, 4.842962019641484
+12,overdraagplaats,Bosbaansluis zuid,,52.329427177750134, 4.84257553874753
+13,overdraagplaats,brug 508 noord,,52.325957374737435, 4.84328592487658
+14,overdraagplaats,brug 508 zuid,,52.32550627072674, 4.843462096997797
+15,overdraagplaats,ringvaart-amsterdamsebos west,,52.318094576947985, 4.8175144836699335
+16,overdraagplaats,ringvaart-amsterdamsebos oost,,52.3183126334414, 4.81875086852334
+17,overdraagplaats,Crommenije,,52.52978557478417, 4.749224628408682
+18,overdraagplaats,Langendijk,,52.52513210712969, 4.745810112314623
+19,overdraagplaats,Overtoomsloot Busch en Dam,,52.50763211674445, 4.745607086208556
+20,overdraagplaats,Meldijk,,52.52794055722044, 4.718286592283419
+21,sluis,Sluis Montfoort,,52.04623406826548, 4.947878840275155
+22,sluis,Sluis Oudewater,,52.025163068434026, 4.870829178411512
+23,startpunt,Natuurcamping De Boerderij,,52.05025185515382, 4.8957056346713985
+24,startpunt,einde Kaagweg,betonnen rand,52.21493079513332, 4.602734768555966
+25,startpunt,Menneweg,lage oever,52.21179041868561, 4.531153927216727
+26,startpunt,Leimuiderdijk,lage oever net buiten bebouwde kombord,52.248905533815424, 4.7061807957546185
+27,startpunt,steiger kv Waterwolf,,52.329126377288326, 4.650633764348215
+28,startpunt,Ringvaartlaan,loswal,52.337716376102556, 4.631325281780998
+29,startpunt,Wim Noordhoekkade,zondag gratis parkeren,52.34575312666926, 5.0114800862526145
+30,vereniging,Kano op IJburg,,52.34440308794769, 5.005407018871006
+31,vereniging,kv Zeeburg,,52.367366782987766, 4.936298482997076
+32,vereniging,kv Sloterplas,,52.35868908443914, 4.816094985832147
+33,startpunt,Oostvaadersdijk,,52.51252080072195, 5.435770721402556
+34,startpunt,Het Ouweland,,52.560197109070195, 4.857567142563697
+35,startpunt,Akersluis,gratis parkeren,52.34382060142071, 4.7935668355969066
+36,startpunt,Parkeerplaats Grote Vijver,,52.322769097585805, 4.829710935107227
