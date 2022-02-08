@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/jpg" href="../favicon.ico"/>
+
+     <!-- Load Leaflet code library: see http://leafletjs.com/download.html -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="detailInfo.js"></script>
+    <title>Route informatie</title>
+  </head>
+  <body>
+    
+    <div class="wrapper">
+        <header class="header"></header>
+        <aside class="sidebar">
+            <output></output>
+        </aside>
+        <div class="content" id="infomap"></div>
+          
+        <footer class="footer"><a href="../index.html">Kaart met alle routes</a>
+            </footer>
+      </div>
+
+    <script>
+      const queryString = window.location.search;
+      //console.log(queryString)
+      var gpxfile = queryString.split('=')[1]
+      var routenaam = gpxfile.split('.')[0];
+      //console.log(gpxfile, routenaam)
+      try{
+        var route = JSON.parse(routeInfo[routenaam])
+        console.log(route)
+        $("header").html(
+          route.naam
+         );
+
+        $("output").html(
+          '<ul> lengte: ' + route.lengte + '</ul>' +
+          '<ul> parkeren: ' + route['parkeren'] + '</ul>' +
+          '<ul> instap: ' + route['instap'] + '</ul>' +
+          '<ul> overig: ' + route['overig'] + '</ul>' 
+        );
+      } catch (error){
+        console.error('kan geen detail info vinden');
+        $("header").html(
+          "geen detail info beschikbaar..."
+         );
+        $(".sidebar").height('400px'
+        );
+      }
+      
+        route = '../tracks/'+ queryString.split('=')[1]
+        
+        /* Set up the initial map center and zoom level */
+        var map = L.map('infomap', {
+          center: [52.36, 4.78], // EDIT coordinates to re-center map
+          zoom: 11,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
+          scrollWheelZoom: true,
+          tap: false
+        });
+      
+        /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
+        L.tileLayer(
+          'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://osm.org/copyright">\
+              OpenStreetMap</a> contributors, &copy;\
+              <a href="https://carto.com/attribution">CARTO</a>'
+        }).addTo(map);
+
+        var track = new omnivore.gpx(route)
+        .on('ready', function() {
+            map.fitBounds(track.getBounds());
+        }).addTo(map);
+    </script>
+  </body>
+</html>

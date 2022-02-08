@@ -18,12 +18,24 @@
   <style>
   body { margin:0; padding:0; }
   #map { position: absolute; top:0; bottom:0; right:0; left:0; }
-  #map-title { position: relative; margin-top: 10px; margin-left: 50px; float: left; background: white; border: 2px solid rgba(0,0,0,0.2); padding: 6px 8px; font-family: Helvetica; font-weight: bold; font-size: 24px; z-index: 800; }
+  #map-title { position: relative; margin-top: 10px; margin-left: 50px; float: left; background: white; 
+    border: 2px solid rgba(0,0,0,0.2); padding: 6px 8px; font-family: Helvetica; font-weight: bold; 
+    font-size: 14px; z-index: 800; width: 200px; }
   </style>
 </head>
 <body>
       <!-- Display the map and title with HTML division tags  -->
-  <div id="map-title">kanoroutes</div>
+  <div id="map-title">
+    <!--<img src="./icons/logo_waterwolf.jpeg">-->
+     <h1>kanoroutes</h1>
+
+    Op deze site zijn een aantal routes verzameld via leden van <a href="https://www.kvwaterwolf.nl/" target="_blank">Kv Waterwolf</a>.
+    </br>
+      Door op de route te klikken komt er een pop-up met meer informatie over de route.
+    <h4>disclaimer:</h4>
+    er kunnen geen rechten ontleend worden aan deze informatie. routes kunnen inmiddels niet meer mogelijk zijn of anderszins foutief of onvolledig zijn.
+
+  </div>
   <div id="map"></div>
 
   <!-- Create the interactive map content with JavaScript (.js) -->
@@ -48,19 +60,24 @@
   //lagen control initialiseren
   var control = L.control.layers(null, null).addTo(map);
 
+  //
+  //GPS gebaseerde routes
+  //
   //attributen uit gpx schema (name, desc) en het label voor de popup
   gpxheaders = [['name','naam'],['desc','lengte']]
 
   //popup configureren en laag toevoegen aan layer control
   customLayer = L.geoJson(null, {
     onEachFeature: function (feature, layer) {
-        //console.log(feature)
+        //console.log(layer)
         control.addOverlay(layer, feature.properties['name'])
         var popupContent = gpxheaders.map(function (gpxheader) {
-            return gpxheader[1] + ' : ' + feature.properties[gpxheader[0]];}).join('<br>');
-            
+            return gpxheader[1] + ' : ' + feature.properties[gpxheader[0]];}).join('<br>');            
+            //extra info pagina
+            popupContent = popupContent+" </br> <a href=\"/kanoroutes/routes/detail.html?route="+ feature.properties['link'] +"\">meer info...</a>";
+            //gpx download link
             if (feature.properties['link']){
-              popupContent = popupContent+" </br> <a href=\""+ feature.properties['link']+"\">Meer info...</a>";
+              popupContent = popupContent+" </br> <a href=\"/kanoroutes/tracks/"+ feature.properties['link']+"\">gpx downloaden...</a>";
             }  
     layer.bindPopup(popupContent);
     //higlight track bij mouseover
@@ -88,6 +105,8 @@ for (var i = 0; i < listOfFilesPath.length; i += 1) {
     .addTo(map);
 }
 
+//
+// Puntgegevens met informatie verzameld in een CSV bestand
 //
 // poi labels
 headers = ['soort','naam']
