@@ -14,6 +14,9 @@
 
   <script src="routes.js"></script>
 
+  <link rel="stylesheet" href="../kanoroutes/lib/css/L.Control.SlideMenu.css">
+  <script src="../kanoroutes/lib/js/L.Control.SlideMenu.js"></script>
+
   <!-- Position the map and title with Cascading Style Sheet (CSS) -->
   <style>
   body { margin:0; padding:0; }
@@ -21,35 +24,29 @@
   #map-title { position: relative; margin-top: 10px; margin-left: 50px; float: left; background: white; 
     border: 2px solid rgba(0,0,0,0.2); padding: 6px 8px; font-family: Helvetica; font-weight: bold; 
     font-size: 14px; z-index: 800; width: 200px; }
+    .fa-bars:before {
+            content: "info";
+          }
+          .fa-chevron-left:before {
+            content: "sluiten";
+          }
   </style>
 </head>
 <body>
-      <!-- Display the map and title with HTML division tags  -->
-  <div id="map-title">
-    <!--<img src="./icons/logo_waterwolf.jpeg">-->
-     <h1>kanoroutes</h1>
 
-    Op deze site zijn een aantal routes verzameld via leden van <a href="https://www.kvwaterwolf.nl/" target="_blank">Kv Waterwolf</a>.
-    </br>
-      Door op de route te klikken komt er een pop-up met meer informatie over de route.
-    <h4>disclaimer:</h4>
-    er kunnen geen rechten ontleend worden aan deze informatie. routes kunnen inmiddels niet meer mogelijk zijn of anderszins foutief of onvolledig zijn.
-    <p>
-      vragen, opmerkingen, suggesties? </br>
-      zie: <a href="https://github.com/NielsHoffmann/kanoroutes" target="_blank">github</a>
-    </p>
-  </div>
   <div id="map"></div>
 
   <!-- Create the interactive map content with JavaScript (.js) -->
   <script>
 
+  var myRenderer = L.canvas({ padding: 0.5 , tolerance: 20});
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
     center: [52.36, 4.78], // EDIT coordinates to re-center map
     zoom: 11,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
     scrollWheelZoom: true,
-    tap: false
+    renderer: L.canvas()
+    //tap: false
   });
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
@@ -97,7 +94,8 @@
         customLayer.resetStyle(e.target);
       }
   })
-}
+},
+  renderer: myRenderer
 });
 
 //welke gpx tracks er geladen moeten worden is gedefinieerd in routes.js
@@ -156,7 +154,20 @@ omnivore.csv('/kanoroutes/poi/poi.csv', null, customLayerLocalData)
     //L.control.layers(null, overlayMaps).addTo(map);
   }).addTo(map);
 
+  //content voor info sidepanel
+  var content = '<h1>kanoroutes</h1>';
+  content += '<hr>';
+  content += 'Op deze site zijn een aantal routes verzameld via leden van <a href="https://www.kvwaterwolf.nl/" target="_blank">Kv Waterwolf</a>.';
+  content += '  </br>';
+  content += '    Door op de route te klikken komt er een pop-up met meer informatie over de route.';
+  content += '  <h4>disclaimer:</h4>';
+  content += '  er kunnen geen rechten ontleend worden aan deze informatie. routes kunnen inmiddels niet meer mogelijk zijn of anderszins foutief of onvolledig zijn.';
+  content += '  <p>';
+  content += '    vragen, opmerkingen, suggesties? </br>';
+  content += '    zie: <a href="https://github.com/NielsHoffmann/kanoroutes" target="_blank">github</a>';
+  content += ' </p>';
 
+  L.control.slideMenu(content).addTo(map);
 </script>
 </body>
 </html>
