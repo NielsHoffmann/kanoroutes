@@ -5,5 +5,6 @@ var routeInfo = {
 "eilandspolder":'{ "naam":"Eilandspolder","lengte": "14,3km","parkeren":"De Rijp, Het Ouweland","instap":"lage slootkant met beschoeiing", "overig":"officiele kano aanlegplaats"}',
 "eilandspolder_10_km":'{ "naam":"Eilandspolder","lengte": "10km","parkeren":"De Rijp, Het Ouweland","instap":"lage slootkant met beschoeiing", "overig":"officiele kano aanlegplaats"}',
 "nieuwe_meer_schinkel_sloterplas":'{ "naam":"Nieuwe Meer, Schinkel Sloterplas","lengte": "16,9km","parkeren":"Akersluis","instap":"kanosteigers aan beide zijden van de sluis", "overig":"2x overdragen, Cramersluis en Nieuwemeersluis"}',
-"slotervaart_schinkel_nieuwe_meer":'{ "naam":"Slotervaart - Schinkel - Nieuwe meer","lengte": "16,9km","parkeren":"Akersluis","instap":"kanosteigers aan beide zijden van de sluis", "overig":"2x overdragen, Westlandgrachtsluis en Nieuwemeersluis"}'
+"slotervaart_schinkel_nieuwe_meer":'{ "naam":"Slotervaart - Schinkel - Nieuwe meer","lengte": "15,3m","parkeren":"Akersluis","instap":"kanosteigers aan beide zijden van de sluis", "overig":"2x overdragen, Westlandgrachtsluis en Nieuwemeersluis"}',
+"adam_nieuw_west_12k":'{"naam":"Amsterdam Nieuw West","lengte": "11,8km","parkeren":"Akersluis","instap":"kanosteigers aan beide zijden van de sluis", "overig":"afwisselende route via de grachten van Osdorp en Geuzenveld en door het Sloterpark"}'
 }

@@ -33,5 +33,7 @@ var routeData = { "routes":
   "/kanoroutes/tracks/westeinder_10_km.gpx",
   "/kanoroutes/tracks/westeinder.gpx",
   "/kanoroutes/tracks/westzaan.gpx",
-  "/kanoroutes/tracks/wetering_leiderdorp_28_km.gpx"
+  "/kanoroutes/tracks/wetering_leiderdorp_28_km.gpx",
+  "/kanoroutes/tracks/broek_op_langedijk_10k.gpx",
+  "/kanoroutes/tracks/adam_nieuw_west_12k.gpx"
 ]}
