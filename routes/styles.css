@@ -73,3 +73,7 @@ h1, p {
 a {
     color: whitesmoke;
   }
+
+.leaflet-container {
+  min-height: 300px;
+}
