@@ -1,5 +1,5 @@
 id,soort,naam,opmerking,latitude,longitude
-1,vereniging,Kanovereniging Waterwolf,,52.316468, 4.697874
+1,vereniging,Kanovereniging Waterwolf,,52.316680, 4.698152
 2,startpunt,startpunt Westzaan, ,52.468472,4.789404
 3,overdraagplaats,Akersluis west,,52.34350884067578, 4.793123098819551
 4,overdraagplaats,Akersluis oost,,52.34442657985269, 4.793752530595194
@@ -25,7 +25,7 @@ id,soort,naam,opmerking,latitude,longitude
 24,startpunt,einde Kaagweg,betonnen rand,52.21493079513332, 4.602734768555966
 25,startpunt,Menneweg,lage oever,52.21179041868561, 4.531153927216727
 26,startpunt,Leimuiderdijk,lage oever net buiten bebouwde kombord,52.248905533815424, 4.7061807957546185
-27,startpunt,steiger kv Waterwolf,,52.329126377288326, 4.650633764348215
+27,startpunt,steiger kv Waterwolf,,52.316390, 4.697968
 28,startpunt,Ringvaartlaan,loswal,52.337716376102556, 4.631325281780998
 29,startpunt,Wim Noordhoekkade,zondag gratis parkeren,52.34575312666926, 5.0114800862526145
 30,vereniging,Kano op IJburg,,52.34440308794769, 5.005407018871006
