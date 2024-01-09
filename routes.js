@@ -35,5 +35,21 @@ var routeData = { "routes":
   "/kanoroutes/tracks/westzaan.gpx",
   "/kanoroutes/tracks/wetering_leiderdorp_28_km.gpx",
   "/kanoroutes/tracks/broek_op_langedijk_10k.gpx",
-  "/kanoroutes/tracks/adam_nieuw_west_12k.gpx"
+  "/kanoroutes/tracks/adam_nieuw_west_12k.gpx",
+  "/kanoroutes/tracks/alkmaar_8_5_k.gpx",
+  "/kanoroutes/tracks/almere_14_5_k.gpx",
+  "/kanoroutes/tracks/amsterdamse_bos_12_k.gpx",
+  "/kanoroutes/tracks/dommel_valkenswaard_eindhoven_11_k.gpx",
+  "/kanoroutes/tracks/gein_17_k.gpx",
+  "/kanoroutes/tracks/ilperveld_12_k.gpx",
+  "/kanoroutes/tracks/kagerplassen_leiden_16_k.gpx",
+  "/kanoroutes/tracks/kortenhoef_10_k.gpx",
+  "/kanoroutes/tracks/lisse_11_5_k.gpx",
+  "/kanoroutes/tracks/ronde_hoep_16_k.gpx",
+  "/kanoroutes/tracks/uitgeest_8_k.gpx",
+  "/kanoroutes/tracks/waterland_16_k.gpx",
+  "/kanoroutes/tracks/weerribben_dag1_7_k.gpx",
+  "/kanoroutes/tracks/weerribben_dag2_20_k.gpx",
+  "/kanoroutes/tracks/weerribben_dag3_13_k.gpx",
+  "/kanoroutes/tracks/westeinder_oostenwind_10_k.gpx"
 ]}
