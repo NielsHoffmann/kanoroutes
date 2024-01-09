@@ -1,5 +1,5 @@
 id,soort,naam,opmerking,latitude,longitude
-1,vereniging,Kanovereniging Waterwolf,,52.32990566979075,4.651397371783277
+1,vereniging,Kanovereniging Waterwolf,,52.316468, 4.697874
 2,startpunt,startpunt Westzaan, ,52.468472,4.789404
 3,overdraagplaats,Akersluis west,,52.34350884067578, 4.793123098819551
 4,overdraagplaats,Akersluis oost,,52.34442657985269, 4.793752530595194
@@ -45,3 +45,11 @@ id,soort,naam,opmerking,latitude,longitude
 44,startpunt,Kanowaard,,52.673004208880684, 4.814106913662992
 45,overdraagplaats,Omval - 1000 eilanden,,52.67318052607032, 4.817903334571769
 46,startpunt,Aalsmeerderdijk,,52.281778602968124, 4.7756196758666
+47,startpunt,Moleneind,,52.225338, 5.084437
+48,startpunt,Amsteldijk zuid,,52.293048, 4.890541
+49,startpunt,Driemondweg,,52.308856,5.002609
+50,startpunt,Zijldijk,,52.188347, 4.524942
+51,startpunt,Grote Brekkenstraat,,52.390863, 5.227868
+52,startpunt,Molenwijk,,52.725100, 5.963135
+53,startpunt,Christoffelpad,Parkeren Cornelisdal,51.359345, 5.437827
+54,startpunt,Sportlaan, Parkeerterrein Sportpark Landsmeer,52.432009, 4.910969
