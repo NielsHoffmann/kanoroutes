@@ -64,7 +64,7 @@
   //GPS gebaseerde routes
   //
   //attributen uit gpx schema (name, desc) en het label voor de popup
-  gpxheaders = [['name','naam'],['desc','lengte']]
+  gpxheaders = [['name','naam'],['desc','lengte']];
 
   //popup configureren en laag toevoegen aan layer control
   customLayer = L.geoJson(null, {
@@ -72,12 +72,12 @@
         //console.log(layer)
         control.addOverlay(layer, feature.properties['name'])
         var popupContent = gpxheaders.map(function (gpxheader) {
-            return gpxheader[1] + ' : ' + feature.properties[gpxheader[0]];}).join('<br>');            
+            return gpxheader[1] + ' : ' + feature.properties[gpxheader[0]].split(';')[0];}).join('<br>');            
             //extra info pagina
-            popupContent = popupContent+" </br> <a href=\"/kanoroutes/routes/detail.html?route="+ feature.properties['link'] +"\">meer info...</a>";
+            popupContent = popupContent+" </br> <a href=\"/kanoroutes/routes/detail.html?route="+ feature.properties['desc'].split(';')[1].trim() +"\">meer info...</a>";
             //gpx download link
-            if (feature.properties['link']){
-              popupContent = popupContent+" </br> <a href=\"/kanoroutes/tracks/"+ feature.properties['link']+"\">gpx downloaden...</a>";
+            if (feature.properties['desc']){
+              popupContent = popupContent+" </br> <a href=\"/kanoroutes/tracks/"+ feature.properties['desc'].split(';')[1].trim() +"\">gpx downloaden...</a>";
             }  
     layer.bindPopup(popupContent);
     //higlight track bij mouseover

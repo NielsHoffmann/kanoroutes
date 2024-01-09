@@ -4,10 +4,8 @@
     <name>
    Alkmaar Kayak
   </name>
-    <desc>9.39 km</desc>
-    <link href="./alkmaar_8_5_k.gpx">
-      <text>alkmaar_8_5_k.gpx</text>
-    </link>
+    <cmt>alkmaar_8_5_k.gpx</cmt>
+    <desc>9.39 km; alkmaar_8_5_k.gpx</desc>
     <type>
    paddling_v2
   </type>
