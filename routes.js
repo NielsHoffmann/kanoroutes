@@ -51,5 +51,6 @@ var routeData = { "routes":
   "/kanoroutes/tracks/weerribben_dag1_7_k.gpx",
   "/kanoroutes/tracks/weerribben_dag2_20_k.gpx",
   "/kanoroutes/tracks/weerribben_dag3_13_k.gpx",
-  "/kanoroutes/tracks/westeinder_oostenwind_10_k.gpx"
+  "/kanoroutes/tracks/westeinder_oostenwind_10_k.gpx",
+  "/kanoroutes/tracks/braassem_drecht_18_k.gpx"
 ]}
