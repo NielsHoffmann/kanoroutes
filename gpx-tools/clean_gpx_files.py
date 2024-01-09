@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import os
 
 def clean_gpx(directory, input):
-    outputdir = r'./output'
+    outputdir = r'./clean'
     gpxfile = open(directory + os.sep + input, "r", encoding="utf-8")
     soup = BeautifulSoup(gpxfile, 'xml')
     for data in soup(['extensions','time']):
