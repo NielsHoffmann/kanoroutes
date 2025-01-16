@@ -66,4 +66,8 @@ var routeData = {
         "/kanoroutes/tracks/loosdrecht.gpx",
         "/kanoroutes/tracks/nieuwkoop.gpx", 
         "/kanoroutes/tracks/utrecht.gpx",
+        "/kanoroutes/tracks/5e_baan_vanaf_de_waterwolf.gpx",
+        "/kanoroutes/tracks/waterwolf_1.gpx",
+        "/kanoroutes/tracks/waterwolf_2.gpx",
+        "/kanoroutes/tracks/waterwolf_3.gpx"
     ] }
