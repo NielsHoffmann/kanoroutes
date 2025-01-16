@@ -47,7 +47,7 @@ id,soort,naam,opmerking,latitude,longitude
 46,startpunt,Aalsmeerderdijk,,52.281778602968124, 4.7756196758666
 47,startpunt,Moleneind,,52.225338, 5.084437
 48,startpunt,Amsteldijk zuid,,52.293048, 4.890541
-49,startpunt,Driemondweg,,52.308856,5.002609
+49,startpunt,Driemondweg,120m lopen naar de Gaasperplas / 220m lopen naar de Gaasp,52.308856,5.002609
 50,startpunt,Zijldijk,,52.188347, 4.524942
 51,startpunt,Grote Brekkenstraat,,52.390863, 5.227868
 52,startpunt,Molenwijk,,52.725100, 5.963135
@@ -61,3 +61,10 @@ id,soort,naam,opmerking,latitude,longitude
 60,startpunt, Hillegom, hoge kant, 52.273480, 4.576585
 61,startpunt, Penningsveer, ,52.389651, 4.682864
 62,startpunt, Aalsmeer, Surfstrandje, 52.252821, 4.757746
+63,overdraagplaats, Vijfhuizerweg, steile kant, 52.343764, 4.688837
+64,overdraagplaats, Demmerikse sluis,steiger / betonnen kant ,52.220582, 4.972594
+65,overdraagplaats, Abcoudermeer, steiger ,52.280764, 4.965961
+66,overdraagplaats, De Vijf Slagen ,steiger ,52.281615, 4.966418
+67,overdraagplaats, dwars door het riet, ,52.328957, 4.662569
+68,overdraagplaats, Fuikplas, ,52.373741, 4.665452
+69,overdraagplaats, Zomervaart, alleen maar een betonnen randje / tunnel is te varen,52.374971, 4.657669
