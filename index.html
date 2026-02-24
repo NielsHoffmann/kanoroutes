@@ -14,8 +14,8 @@
 
   <script src="routes.js"></script>
 
-  <link rel="stylesheet" href="../kanoroutes/lib/css/L.Control.SlideMenu.css">
-  <script src="../kanoroutes/lib/js/L.Control.SlideMenu.js"></script>
+  <link rel="stylesheet" href="../lib/css/L.Control.SlideMenu.css">
+  <script src="../lib/js/L.Control.SlideMenu.js"></script>
 
   <!-- Position the map and title with Cascading Style Sheet (CSS) -->
   <style>
@@ -74,10 +74,10 @@
         var popupContent = gpxheaders.map(function (gpxheader) {
             return gpxheader[1] + ' : ' + feature.properties[gpxheader[0]].split(';')[0];}).join('<br>');            
             //extra info pagina
-            popupContent = popupContent+" </br> <a href=\"/kanoroutes/routes/detail.html?route="+ feature.properties['desc'].split(';')[1].trim() +"\">meer info...</a>";
+            popupContent = popupContent+" </br> <a href=\"/routes/detail.html?route="+ feature.properties['desc'].split(';')[1].trim() +"\">meer info...</a>";
             //gpx download link
             if (feature.properties['desc']){
-              popupContent = popupContent+" </br> <a href=\"/kanoroutes/tracks/"+ feature.properties['desc'].split(';')[1].trim() +"\">gpx downloaden...</a>";
+              popupContent = popupContent+" </br> <a href=\"/tracks/"+ feature.properties['desc'].split(';')[1].trim() +"\">gpx downloaden...</a>";
             }  
     layer.bindPopup(popupContent);
     //higlight track bij mouseover
@@ -145,7 +145,7 @@ customLayerLocalData = L.geoJson(null, {
 //voeg alle punten uit de csv toe
 var pois = L.layerGroup();
 
-omnivore.csv('/kanoroutes/poi/poi.csv', null, customLayerLocalData)
+omnivore.csv('/poi/poi.csv', null, customLayerLocalData)
     .on('ready', function() {
     for (var key in customLayerLocalData._layers) {
         customLayerLocalData._layers[key].addTo(pois);
