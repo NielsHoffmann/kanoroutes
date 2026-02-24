@@ -1,4 +1,4 @@
-id,soort,naam,opmerking,latitude,longitude
+id,soort,naam,opmerking,lat,lon
 1,vereniging,Kanovereniging Waterwolf,,52.316680, 4.698152
 2,startpunt,startpunt Westzaan, ,52.468472,4.789404
 3,overdraagplaats,Akersluis west,,52.34350884067578, 4.793123098819551
@@ -69,6 +69,6 @@ id,soort,naam,opmerking,latitude,longitude
 68,overdraagplaats, Fuikplas, ,52.373741, 4.665452
 69,overdraagplaats, Zomervaart, alleen maar een betonnen randje / tunnel is te varen,52.374971, 4.657669
 70,startpunt, Zeeweg, strandje met betonnen rand ,52.329238, 5.118203
-71,startpunt, Vissershang, Parkeerplaats Nationaal Park de Biesbosch (Aakvlaai), kleine 100m lopen naar kanosteiger,51.728627, 4.859790
+71,startpunt,Parkeerplaats Nationaal Park de Biesbosch (Aakvlaai), kleine 100m lopen naar kanosteiger,51.728627,4.859790
 72,startpunt, Haagweg, hoge kade met trapjes, 52.021351, 4.348703
 73,startpunt, Achter Van de Valk Akersloot, kanosteiger, 52.549413, 4.721849
