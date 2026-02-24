@@ -80,5 +80,6 @@ var routeData = { "routes":
 		"/tracks/roer.gpx",
 		"/tracks/weerribben.gpx",
 		"/tracks/wieden.gpx",
+		"/tracks/wormer_en_jisperveld.gpx",
 	]
 }
