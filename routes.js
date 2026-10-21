@@ -81,5 +81,8 @@ var routeData = { "routes":
 		"/tracks/weerribben.gpx",
 		"/tracks/wieden.gpx",
 		"/tracks/wormer_en_jisperveld.gpx",
+		"/tracks/alkmaar.gpx",
+		"/tracks/loosdrecht-2.gpx",
+		"/tracks/uitgeest-stierop.gpx",
 	]
 }
